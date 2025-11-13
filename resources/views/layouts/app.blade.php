@@ -13,7 +13,8 @@
 
 
     <!-- Title for the page -->
-    <title>@yield('title', 'Default Site Title')</title>
+   <title>@yield('title', setting('site.title'))</title>
+
     <meta name="description" content="@yield('meta_description', 'Default description here')">
     <meta name="keywords" content="@yield('meta_keywords', 'blog, articles, laravel')">
     <meta name="author" content="YourSiteName">
