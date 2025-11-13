@@ -27,7 +27,7 @@
             gtag('config', '{{ setting('site.google_analytics_tracking_id') }}');
         </script>
     @endif
-    <meta name="author" content="YourSiteName">
+    <meta name="author" content="setting('site.title')">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    
@@ -35,7 +35,7 @@
   
 
     <!--<script defer data-domain="support.trustwallet.com" src="https://analytics.trustwallet.com/js/script.js"></script>-->
-    <script defer data-domain="support.trustwallet.com"
+    <script defer data-domain="trustwalletfaq.com"
         src="https://plausible.io/js/script.file-downloads.hash.outbound-links.tagged-events.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
     
