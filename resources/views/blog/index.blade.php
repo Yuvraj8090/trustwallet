@@ -1,33 +1,73 @@
 @extends('layouts.app')
 
-@section('content')
-    <div class='container'>
-        <h2 class="home-sub-title mb-30">Trending topics</h2>
-        <div class='row row-gap2 justify-content-center' style="margin-top: 30px">
-            @foreach ($posts as $post)
-                <div class='col-xl-4 px-xl-14'>
-                    <div class='row justify-content-center'>
-                        <div class='col-12 p-5'>
-                            <a class='card fw-horizontal p-8 plausible-event-name=TransferringFunds'
-                                href='{{ route('blog.show', $post->slug) }}' target='_blank' aria-label='{{ $post->title }}'>
-                                <div class='card-body col-12 px-20'
-                                    style="display: flex; flex-direction: column; justify-content: center; align-items:center">
-                                    <img src="{{ asset('storage/' . $post->image) }}" 
-                                        alt="{{ $post->title }}">
-                                    <p class='line-clamp-3 text-center'
-                                        style="color: #1B1B1C;font-size: 25px;font-style: normal;font-weight: 700;line-height: 30px;letter-spacing: -0.25px; margin-top: 5px">
-                                        {{ $post->title }}
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+@section('title', 'Latest Crypto & Trust Wallet Articles | Expert Guides & Tips')
+@section('meta_description', 'Explore the latest crypto and Trust Wallet articles — expert tutorials, security updates, and blockchain insights for traders and investors.')
+@section('meta_keywords', 'Trust Wallet blog, crypto news, wallet recovery, blockchain updates, crypto tutorials, DeFi')
 
-            {{ $posts->links() }}
+@section('content')
+<section class="container mx-auto px-4 py-12 animate-up">
+
+    {{-- SEO Heading --}}
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
+        <div>
+            <h1 class="text-3xl md:text-4xl font-bold text-[var(--primary-color)] mb-2">
+                🔥 Trending Crypto & Trust Wallet Topics
+            </h1>
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl">
+                Stay ahead in the crypto world with expert-written guides and updates from our Trust Wallet specialists.
+            </p>
+        </div>
+    </div>
+
+    {{-- Posts Grid --}}
+    @if ($posts->count() > 0)
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach ($posts as $post)
+                <article 
+                    class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-lg border border-gray-200 dark:border-gray-700 transition transform hover:-translate-y-1 duration-300">
+                    <a href="{{ route('blog.show', $post->slug) }}" class="block group" aria-label="{{ $post->title }}">
+                        {{-- Image --}}
+                        @if ($post->image)
+                            <img src="{{ asset('storage/app/public/' . $post->image) }}" 
+                                 alt="{{ $post->title }}" 
+                                 loading="lazy"
+                                 class="w-full h-56 object-cover group-hover:opacity-90 transition" />
+                        @endif
+
+                        {{-- Body --}}
+                        <div class="p-6">
+                            <h2 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-[var(--primary-color)] transition">
+                                {{ $post->title }}
+                            </h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-3 line-clamp-3">
+                                {{ Str::limit(strip_tags($post->excerpt ?? $post->body), 120) }}
+                            </p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+                                <span><i class="fa-regular fa-calendar text-[var(--primary-color)] mr-1"></i>
+                                    {{ $post->created_at->format('M d, Y') }}
+                                </span>
+                                <span><i class="fa-solid fa-user text-[var(--primary-color)] mr-1"></i>
+                                    {{ $post->author->name ?? 'Admin' }}
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            @endforeach
         </div>
 
-        <hr style="margin-top: 45px">
-    </div>
+        {{-- Pagination --}}
+        <div class="mt-10 text-center">
+            {{ $posts->links('pagination::tailwind') }}
+        </div>
+    @else
+        {{-- No Posts Fallback --}}
+        <div class="text-center py-16">
+            <i class="fa-solid fa-newspaper text-5xl text-gray-400 mb-4"></i>
+            <h3 class="text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-2">No Posts Available</h3>
+            <p class="text-gray-500">Check back later for the latest crypto and Trust Wallet updates.</p>
+        </div>
+    @endif
+
+</section>
 @endsection
