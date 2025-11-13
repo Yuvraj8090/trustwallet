@@ -27,7 +27,7 @@
             gtag('config', '{{ setting('site.google_analytics_tracking_id') }}');
         </script>
     @endif
-    <meta name="author" content="setting('site.title')">
+    <meta name="author" content="{{ setting('site.title') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    
