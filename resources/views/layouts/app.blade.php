@@ -15,8 +15,18 @@
     <!-- Title for the page -->
    <title>@yield('title', setting('site.title'))</title>
 
-    <meta name="description" content="@yield('meta_description', 'Default description here')">
-    <meta name="keywords" content="@yield('meta_keywords', 'blog, articles, laravel')">
+   <meta name="description" content="@yield('meta_description', setting('site.description'))">
+
+   <meta name="keywords" content="@yield('meta_keywords', setting('site.meta_keywords'))">
+ @if (setting('site.google_analytics_tracking_id'))
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('site.google_analytics_tracking_id') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ setting('site.google_analytics_tracking_id') }}');
+        </script>
+    @endif
     <meta name="author" content="YourSiteName">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
