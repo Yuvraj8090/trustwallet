@@ -88,9 +88,11 @@
     <!-- Navbar -->
     <nav class="backdrop-blur-md   shadow sticky top-0 z-50 animate-fade">
         <div class="container mx-auto flex justify-between items-center px-6 py-3">
+            <a href="{{ route('welcome') }}">
             <h1 class="text-2xl font-bold flex items-center gap-2 text-[var(--text-main)] dark:text-white">
                 <img src="https://twtholders.trustwallet.com/assets/trust.svg" alt="" srcset="">
             </h1>
+            </a>
 
             <div class="flex items-center gap-3">
                 <!-- Theme Toggle Button -->
