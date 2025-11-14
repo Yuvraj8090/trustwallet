@@ -52,9 +52,12 @@
     @endif
     @stack('head')
     {{-- ✅ CSS & Frameworks --}}
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  @vite([
+    'resources/css/app.css',
+    'resources/js/app.js'
+])
 
+  
     {{-- ✅ Core Styles --}}
     <style>
         :root {
@@ -147,10 +150,7 @@
                 </ul>
 
 
-                <a href="tel:+15625832749"
-                    class="gradient-bg text-white px-5 py-2 rounded-lg shadow-md hover:scale-105 transition flex items-center gap-2">
-                    <i class="fa-solid fa-phone"></i> Call Now
-                </a>
+               
             </div>
         </div>
     </nav>

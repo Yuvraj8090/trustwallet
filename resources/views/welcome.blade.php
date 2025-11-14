@@ -146,5 +146,38 @@
         <i class="fa-solid fa-phone"></i> Call Support
     </a>
 </section>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    @foreach ($pages as $page)
+        <div class="bg-white shadow-md rounded-lg p-5 border border-gray-200">
+            
+            {{-- Image --}}
+            @if ($page->image)
+                <img class="w-full h-40 object-cover rounded-md mb-4"
+                     src="{{ Voyager::image($page->image) }}"
+                     alt="{{ $page->title }}">
+            @endif
+
+            {{-- Title --}}
+            <h3 class="text-xl font-bold mb-2">
+                <a href="{{ route('page.show', $page->slug) }}" 
+                   class="text-blue-600 hover:underline">
+                    {{ $page->title }}
+                </a>
+            </h3>
+
+            {{-- Excerpt / Short Body --}}
+            <p class="text-gray-600 mb-4">
+                {!! Str::limit(strip_tags($page->body), 120) !!}
+            </p>
+
+            {{-- Read More Button --}}
+            <a href="{{ route('page.show', $page->slug) }}"
+               class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                Read More →
+            </a>
+
+        </div>
+    @endforeach
+</div>
 
 @endsection

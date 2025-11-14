@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Post;
+use TCG\Voyager\Models\Page;
 use Illuminate\Support\Facades\Cache;
 
 class PostController extends Controller
@@ -19,6 +20,7 @@ class PostController extends Controller
                 ->orderBy('created_at', 'desc')
                 ->paginate(10);
         });
+        
 
         return view('blog.index', compact('posts'));
     }
@@ -26,17 +28,32 @@ class PostController extends Controller
     /**
      * Show posts on the homepage (welcome view).
      */
-    public function welcome()
+public function welcome()
 {
-    $posts = Cache::remember('welcome_posts_page_' . request('page', 1), 3600, function () {
-        return Post::where('status', 'PUBLISHED')
-            ->orderBy('created_at', 'desc')
-            ->paginate(6); // 👈 paginated instead of get()
-    });
+    // Fetch Posts (cached, paginated)
+    $posts = Cache::remember(
+        'welcome_posts_page_' . request('page', 1),
+        3600,
+        function () {
+            return Post::where('status', 'PUBLISHED')
+                ->orderBy('created_at', 'desc')
+                ->paginate(6);
+        }
+    );
 
-    return view('welcome', compact('posts'));
+    // Fetch Pages (only ACTIVE ones)
+    $pages = Cache::remember(
+        'welcome_active_pages',
+        3600,
+        function () {
+            return Page::active()
+                ->orderBy('created_at', 'desc')
+                ->get();
+        }
+    );
+
+    return view('welcome', compact('posts', 'pages'));
 }
-
     /**
      * Display a single post by slug.
      */
