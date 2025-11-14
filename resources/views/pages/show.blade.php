@@ -16,7 +16,7 @@
 
     {{-- Page Image --}}
     @if ($page->image)
-        <img src="{{ Voyager::image($page->image) }}"
+        <img src="{{ ('storage/app/public/'.$page->image) }}"
              alt="{{ $page->title }}"
              class="w-full h-64 object-cover rounded-xl shadow-md mb-8">
     @endif
