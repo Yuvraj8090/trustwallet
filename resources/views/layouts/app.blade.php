@@ -13,6 +13,7 @@
     <meta name="keywords" content="@yield('meta_keywords', $post->meta_keywords ?? setting('site.meta_keywords', 'Trust Wallet support, Trust Wallet helpline, crypto wallet recovery, blockchain help, wallet troubleshooting'))">
     <meta name="author" content="{{ setting('site.title', 'Trust Wallet Support Team') }}">
     <meta name="robots" content="index, follow">
+    
 
     <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}">
