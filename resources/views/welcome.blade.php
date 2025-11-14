@@ -194,7 +194,7 @@
             
             {{-- Image --}}
             @if ($page->image)
-                <img class="w-full h-40 object-cover rounded-md mb-4"
+                <img class="w-full h-40 object-fill rounded-md mb-4"
                      src="{{ ('storage/app/public/'.$page->image) }}"
                      alt="{{ $page->title }}">
             @endif
