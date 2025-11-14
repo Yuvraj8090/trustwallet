@@ -6,22 +6,7 @@
 @section('content')
 
 {{-- ========================= H1 Section ========================= --}}
-<section class="animate-up mb-12">
-    <h1 class="text-4xl font-bold mb-4 text-primary">
-        Trust Wallet Customer Support – 24/7 Expert Assistance
-    </h1>
-    <p class="text-[var(--text-muted)] leading-relaxed">
-        Managing digital assets requires reliable support. Our Trust Wallet customer service team provides
-        round-the-clock assistance for wallet recovery, transaction issues, dApp errors, and technical troubleshooting.
-        Get verified support through call or chat — secure, fast, and user-friendly.
-    </p>
 
-    <div class="mt-6">
-        <a href="tel:+15625832749" class="gradient-bg text-white px-8 py-3 rounded-full inline-flex items-center gap-2 shadow-lg hover:scale-105 transition">
-            <i class="fa-solid fa-phone"></i> Call Support
-        </a>
-    </div>
-</section>
 
 
 {{-- ========================= WHY CHOOSE US ========================= --}}
