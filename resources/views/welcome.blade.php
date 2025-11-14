@@ -117,19 +117,61 @@
 
     <div class="space-y-4">
 
-        <div class="bg-[var(--bg-alt)] p-5 rounded-xl border border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">How do I contact Trust Wallet support?</h3>
-            <p>You can contact support via verified call or chat channels available 24/7.</p>
+        <!-- Item 1 -->
+        <div x-data="{ open: false }" class="border border-gray-700 rounded-xl bg-[var(--bg-alt)]">
+            <button 
+                @click="open = !open" 
+                class="w-full flex justify-between items-center p-5 text-left">
+                <span class="font-semibold text-lg">How do I contact Trust Wallet support?</span>
+                <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                <svg x-show="open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                </svg>
+            </button>
+
+            <div x-show="open" x-collapse class="px-5 pb-5 text-gray-600 dark:text-gray-300">
+                You can contact support via verified call or chat channels available 24/7.
+            </div>
         </div>
 
-        <div class="bg-[var(--bg-alt)] p-5 rounded-xl border border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Is there a customer care number?</h3>
-            <p>Yes, users can reach verified support through the official helpline.</p>
+        <!-- Item 2 -->
+        <div x-data="{ open: false }" class="border border-gray-700 rounded-xl bg-[var(--bg-alt)]">
+            <button 
+                @click="open = !open" 
+                class="w-full flex justify-between items-center p-5 text-left">
+                <span class="font-semibold text-lg">Is there a customer care number?</span>
+                <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                <svg x-show="open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                </svg>
+            </button>
+
+            <div x-show="open" x-collapse class="px-5 pb-5 text-gray-600 dark:text-gray-300">
+                Yes, users can reach verified support through the official helpline.
+            </div>
         </div>
 
-        <div class="bg-[var(--bg-alt)] p-5 rounded-xl border border-gray-700">
-            <h3 class="font-semibold text-lg mb-2">Does Trust Wallet support India?</h3>
-            <p>Yes, we offer region-friendly support with guidance for Indian users.</p>
+        <!-- Item 3 -->
+        <div x-data="{ open: false }" class="border border-gray-700 rounded-xl bg-[var(--bg-alt)]">
+            <button 
+                @click="open = !open" 
+                class="w-full flex justify-between items-center p-5 text-left">
+                <span class="font-semibold text-lg">Does Trust Wallet support India?</span>
+                <svg x-show="!open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                </svg>
+                <svg x-show="open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                </svg>
+            </button>
+
+            <div x-show="open" x-collapse class="px-5 pb-5 text-gray-600 dark:text-gray-300">
+                Yes, we offer region-friendly support with guidance for Indian users.
+            </div>
         </div>
 
     </div>

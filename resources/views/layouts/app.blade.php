@@ -5,24 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{-- ✅ Dynamic SEO Title --}}
     <title>
         @yield('title', $post->seo_title ?? setting('site.title', 'Trust Wallet Customer Support | 24/7 Helpline +1 5625832749'))
     </title>
 
-    {{-- ✅ Meta Description / Keywords --}}
     <meta name="description" content="@yield('meta_description', $post->meta_description ?? setting('site.description', 'Get 24/7 Trust Wallet customer support for wallet recovery, transaction help, and blockchain assistance. Call +1 5625832749 for instant help.'))">
     <meta name="keywords" content="@yield('meta_keywords', $post->meta_keywords ?? setting('site.meta_keywords', 'Trust Wallet support, Trust Wallet helpline, crypto wallet recovery, blockchain help, wallet troubleshooting'))">
     <meta name="author" content="{{ setting('site.title', 'Trust Wallet Support Team') }}">
     <meta name="robots" content="index, follow">
 
-    {{-- ✅ Canonical --}}
     <link rel="canonical" href="{{ url()->current() }}" />
-
-    {{-- ✅ Favicon --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-    {{-- ✅ Open Graph (Facebook / LinkedIn) --}}
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{ setting('site.title', 'Trust Wallet Support') }}" />
     <meta property="og:title" content="@yield('title', $post->seo_title ?? setting('site.title', 'Trust Wallet Support'))" />
@@ -30,13 +26,13 @@
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:image" content="{{ asset('assets/trust.svg') }}" />
 
-    {{-- ✅ Twitter Card --}}
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="@yield('title', $post->seo_title ?? setting('site.title', 'Trust Wallet Support'))" />
     <meta name="twitter:description" content="@yield('meta_description', $post->meta_description ?? setting('site.description', 'Instant Trust Wallet customer help and recovery.'))" />
     <meta name="twitter:image" content="{{ asset('assets/trust.svg') }}" />
 
-    {{-- ✅ Google Analytics (from Voyager settings) --}}
+    <!-- Google Analytics -->
     @if (setting('site.google_analytics_tracking_id'))
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('site.google_analytics_tracking_id') }}">
         </script>
@@ -50,15 +46,13 @@
             gtag('config', '{{ setting('site.google_analytics_tracking_id') }}');
         </script>
     @endif
-    @stack('head')
-    {{-- ✅ CSS & Frameworks --}}
-  @vite([
-    'resources/css/app.css',
-    'resources/js/app.js'
-])
 
-  
-    {{-- ✅ Core Styles --}}
+    @stack('head')
+
+    <!-- Vite Assets (Correct Linking) -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Custom Theme Styles -->
     <style>
         :root {
             --primary-color: #0500ff;
@@ -116,6 +110,7 @@
     </style>
 </head>
 
+
 <body class="font-sans overflow-x-hidden bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-500">
 
     <!-- Navbar -->
@@ -123,7 +118,7 @@
         <div class="container mx-auto flex justify-between items-center px-6 py-3">
             <a href="{{ route('welcome') }}">
                 <h1 class="text-2xl font-bold flex items-center gap-2 text-[var(--text-main)] dark:text-white">
-                    <img src="https://twtholders.trustwallet.com/assets/trust.svg" alt="" srcset="">
+                    <img src="{{ asset('assets/logo.svg') }}" alt="@yield('title', $post->seo_title ?? setting('site.title', 'Trust Wallet Customer Support | 24/7 Helpline +1 5625832749'))" srcset="">
                 </h1>
             </a>
 
@@ -150,7 +145,7 @@
                 </ul>
 
 
-               
+
             </div>
         </div>
     </nav>
@@ -170,7 +165,7 @@
         class="bg-[var(--bg-alt)] dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8 text-center text-[var(--text-muted)] dark:text-gray-400">
         <div class="space-y-3">
             <p><i class="fa-solid fa-lock text-primary"></i> Official Trust Wallet Support © 2025</p>
-            
+
         </div>
     </footer>
 
