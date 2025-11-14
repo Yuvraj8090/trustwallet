@@ -170,8 +170,7 @@
         class="bg-[var(--bg-alt)] dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8 text-center text-[var(--text-muted)] dark:text-gray-400">
         <div class="space-y-3">
             <p><i class="fa-solid fa-lock text-primary"></i> Official Trust Wallet Support © 2025</p>
-            <p>24/7 Helpline: <span class="text-[var(--text-main)] dark:text-white font-semibold">+1 5625832749</span>
-            </p>
+            
         </div>
     </footer>
 
