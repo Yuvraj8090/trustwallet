@@ -69,7 +69,7 @@
             @foreach ($relatedPosts as $related)
                 <a href="{{ route('blog.show', $related->slug) }}" 
                    class="flex-none w-72 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition transform hover:scale-105 snap-center">
-                    <img  src="{{ asset('storage/app/public/' . $post->image) }}" 
+                    <img  src="{{ asset('/storage/app/public/' . $post->image) }}" 
                          alt="{{ $related->title }}" 
                          class="rounded-t-xl h-48 w-full object-cover">
                     <div class="p-4">
