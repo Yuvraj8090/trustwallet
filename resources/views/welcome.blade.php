@@ -47,8 +47,8 @@
 
         <div class="text-center mt-8">
             <a href="tel:+15625832749"
-               class="gradient-bg  px-8 py-3 rounded-full shadow-lg hover:scale-110 transition inline-flex items-center gap-2">
-                <i class="fa-solid fa-phone"></i> Call Now: +1 5625832749
+               class="gradient-bg text-white  px-8 py-3 rounded-full shadow-lg hover:scale-110 transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-phone "></i> Call Now: +1 5625832749
             </a>
         </div>
     </section>
@@ -135,7 +135,7 @@
         <h2 class="text-3xl font-bold mb-2 ">Need Help Right Now?</h2>
         <p class=" mb-6">Call our 24/7 verified Trust Wallet customer support.</p>
         <a href="tel:+15625832749"
-           class="gradient-bg  px-8 py-3 rounded-full shadow-lg hover:scale-110 transition inline-flex items-center gap-2">
+           class="gradient-bg text-white px-8 py-3 rounded-full shadow-lg hover:scale-110 transition inline-flex items-center gap-2">
             <i class="fa-solid fa-phone"></i> Call +1 5625832749
         </a>
     </section>
