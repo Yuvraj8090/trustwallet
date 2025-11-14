@@ -15,13 +15,13 @@
         <div class="grid md:grid-cols-2 gap-6">
             <div class="bg-[var(--bg-alt)] dark:bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-primary transition shadow-sm hover:scale-105">
                 <i class="fa-solid fa-clock text-primary text-3xl mb-3"></i>
-                <h3 class="font-semibold text-lg mb-2 text-white">24/7 Availability</h3>
-                <p class="text-white">Global assistance anytime, anywhere with zero delays.</p>
+                <h3 class="font-semibold text-lg mb-2 ">24/7 Availability</h3>
+                <p class="">Global assistance anytime, anywhere with zero delays.</p>
             </div>
             <div class="bg-[var(--bg-alt)] dark:bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-primary transition shadow-sm hover:scale-105">
                 <i class="fa-solid fa-bolt text-primary text-3xl mb-3"></i>
-                <h3 class="font-semibold text-lg mb-2 text-white">Instant Resolutions</h3>
-                <p class="text-white">Quick, accurate troubleshooting by blockchain specialists.</p>
+                <h3 class="font-semibold text-lg mb-2 ">Instant Resolutions</h3>
+                <p class="">Quick, accurate troubleshooting by blockchain specialists.</p>
             </div>
         </div>
     </section>
@@ -38,16 +38,16 @@
 
         <div class="bg-[var(--bg-alt)] dark:bg-gray-800 p-6 rounded-xl border border-gray-700">
             <ul class="grid md:grid-cols-2 gap-4">
-                <li class="text-white"><i class="fa-solid fa-check text-primary"></i> Pending or failed transfers</li>
-                <li class="text-white"><i class="fa-solid fa-check text-primary"></i> Gas fee optimization</li>
-                <li class="text-white"><i class="fa-solid fa-check text-primary"></i> Wallet restoration issues</li>
-                <li class="text-white"><i class="fa-solid fa-check text-primary"></i> Blockchain network errors</li>
+                <li class=""><i class="fa-solid fa-check text-primary"></i> Pending or failed transfers</li>
+                <li class=""><i class="fa-solid fa-check text-primary"></i> Gas fee optimization</li>
+                <li class=""><i class="fa-solid fa-check text-primary"></i> Wallet restoration issues</li>
+                <li class=""><i class="fa-solid fa-check text-primary"></i> Blockchain network errors</li>
             </ul>
         </div>
 
         <div class="text-center mt-8">
             <a href="tel:+15625832749"
-               class="gradient-bg text-white px-8 py-3 rounded-full shadow-lg hover:scale-110 transition inline-flex items-center gap-2">
+               class="gradient-bg  px-8 py-3 rounded-full shadow-lg hover:scale-110 transition inline-flex items-center gap-2">
                 <i class="fa-solid fa-phone"></i> Call Now: +1 5625832749
             </a>
         </div>
@@ -62,13 +62,13 @@
         <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-[var(--bg-alt)] dark:bg-gray-800 p-6 rounded-xl border border-gray-700 hover:scale-105 transition shadow-sm">
                 <i class="fa-solid fa-phone text-primary text-3xl mb-3"></i>
-                <h3 class="text-lg font-semibold mb-2 text-white">Call Support</h3>
-                <p class="text-white">Speak to live crypto specialists who guide you through step-by-step solutions.</p>
+                <h3 class="text-lg font-semibold mb-2 ">Call Support</h3>
+                <p class="">Speak to live crypto specialists who guide you through step-by-step solutions.</p>
             </div>
             <div class="bg-[var(--bg-alt)] dark:bg-gray-800 p-6 rounded-xl border border-gray-700 hover:scale-105 transition shadow-sm">
                 <i class="fa-solid fa-message text-primary text-3xl mb-3"></i>
-                <h3 class="text-lg font-semibold mb-2 text-white">Chat Support</h3>
-                <p class="text-white">Instant, secure chat for real-time troubleshooting and screenshot-based help.</p>
+                <h3 class="text-lg font-semibold mb-2 ">Chat Support</h3>
+                <p class="">Instant, secure chat for real-time troubleshooting and screenshot-based help.</p>
             </div>
         </div>
     </section>

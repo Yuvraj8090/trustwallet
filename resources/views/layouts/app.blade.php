@@ -38,15 +38,19 @@
 
     {{-- ✅ Google Analytics (from Voyager settings) --}}
     @if (setting('site.google_analytics_tracking_id'))
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('site.google_analytics_tracking_id') }}"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('site.google_analytics_tracking_id') }}">
+        </script>
         <script>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
             gtag('js', new Date());
             gtag('config', '{{ setting('site.google_analytics_tracking_id') }}');
         </script>
     @endif
-@stack('head')
+    @stack('head')
     {{-- ✅ CSS & Frameworks --}}
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -61,20 +65,46 @@
             --bg-alt: #f9fafb;
         }
 
-        .text-primary { color: var(--primary-color); }
-        .bg-primary { background-color: var(--primary-color); }
-        .gradient-bg { background: linear-gradient(135deg, #0500ff 0%, #1a1aff 100%); }
+        .text-primary {
+            color: var(--primary-color);
+        }
 
-        .animate-fade { animation: fadeIn 1s ease-in-out; }
-        .animate-up { animation: slideUp 1s ease-in-out; }
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0500ff 0%, #1a1aff 100%);
+        }
+
+        .animate-fade {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-up {
+            animation: slideUp 1s ease-in-out;
+        }
 
         @keyframes fadeIn {
-            from { opacity: 0; } to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         html {
@@ -89,36 +119,32 @@
     <nav class="backdrop-blur-md   shadow sticky top-0 z-50 animate-fade">
         <div class="container mx-auto flex justify-between items-center px-6 py-3">
             <a href="{{ route('welcome') }}">
-            <h1 class="text-2xl font-bold flex items-center gap-2 text-[var(--text-main)] dark:text-white">
-                <img src="https://twtholders.trustwallet.com/assets/trust.svg" alt="" srcset="">
-            </h1>
+                <h1 class="text-2xl font-bold flex items-center gap-2 text-[var(--text-main)] dark:text-white">
+                    <img src="https://twtholders.trustwallet.com/assets/trust.svg" alt="" srcset="">
+                </h1>
             </a>
 
             <div class="flex items-center gap-3">
                 <!-- Theme Toggle Button -->
-<ul class="hidden md:flex items-center gap-8 font-medium">
-    {{-- Home Link --}}
-    <li>
-        <a href="{{ route('welcome') }}"
-           class="transition-colors duration-200
-                  {{ request()->routeIs('welcome') 
-                      ? 'text-primary font-semibold' 
-                      : 'oklch(14.7% 0.004 49.25)' }}">
-            Home
-        </a>
-    </li>
+                <ul class="hidden md:flex items-center gap-8 font-medium">
+                    {{-- Home Link --}}
+                    <li>
+                        <a href="{{ route('welcome') }}"
+                            class="transition-colors duration-200
+                  {{ request()->routeIs('welcome') ? 'text-primary font-semibold' : 'oklch(14.7% 0.004 49.25)' }}">
+                            Home
+                        </a>
+                    </li>
 
-    {{-- Blog Link --}}
-    <li>
-        <a href="{{ route('blog.index') }}"
-           class="transition-colors duration-200
-                  {{ request()->routeIs('blog.index') 
-                      ? 'text-primary font-semibold' 
-                      : 'oklch(14.7% 0.004 49.25)' }}">
-            Blogs
-        </a>
-    </li>
-</ul>
+                    {{-- Blog Link --}}
+                    <li>
+                        <a href="{{ route('blog.index') }}"
+                            class="transition-colors duration-200
+                  {{ request()->routeIs('blog.index') ? 'text-primary font-semibold' : 'oklch(14.7% 0.004 49.25)' }}">
+                            Blogs
+                        </a>
+                    </li>
+                </ul>
 
 
                 <a href="tel:+15625832749"
@@ -134,9 +160,9 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-16 space-y-16">
-            @yield('content')
+        @yield('content')
         <!-- Why Choose -->
-        
+
     </main>
 
     <!-- Footer -->
