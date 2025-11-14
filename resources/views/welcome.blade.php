@@ -109,7 +109,7 @@
                         alt="{{ $post->title }}"
                         class="w-full h-48 object-cover">
                     <div class="p-5">
-                        <h3 class="text-lg font-semibold mb-2 text-white hover:text-primary transition">
+                        <h3 class="text-lg font-semibold mb-2  hover:text-primary transition">
                             {{ $post->title }}
                         </h3>
                         <p class="text-sm text-gray-400 line-clamp-3">
